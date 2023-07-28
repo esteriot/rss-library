@@ -1,0 +1,29 @@
+.welcome {
+  &__container {
+    position: relative;
+    padding: 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 40px;
+    width: 600px;
+    min-height: 220px;
+    background-color: var(--background-color);
+  }
+
+  &__text {
+    font-family: "Forum", cursive;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-white);
+  }
+}
