@@ -1,9 +1,12 @@
-@import "https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@300;400;700&display=swap";
+// @import "https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@300;400;700&display=swap";
 
 :root {
+  // colors
   --background-color: #0c0c0e;
   --color-white: #fff;
-}
+  --color-black: #000;
 
-// font-family: 'Forum', cursive;
-// font-family: 'Inter', sans-serif;
+  // fonts
+  --main-font: "Forum", cursive;
+  --secondary-font: "Inter", sans-serif;
+}
