@@ -1,9 +1,9 @@
-const menu = document.querySelector('.header__list');
-const burgerBtn = document.querySelector('.header__burger');
+const menu = document.querySelector('.navigation__list');
+const burgerBtn = document.querySelector('.burger');
 
 function handleShowBurger() {
-  burgerBtn.classList.toggle('header__burger--active');
-  menu.classList.toggle('header__list--active');
+  burgerBtn.classList.toggle('burger--active');
+  menu.classList.toggle('navigation__list--active');
   // document.body.classList.toggle('lock');
   // shadow.classList.toggle('shadow--active');
 }

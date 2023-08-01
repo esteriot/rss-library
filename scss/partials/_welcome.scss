@@ -1,10 +1,13 @@
 .welcome {
-  &__container {
+  .container {
     position: relative;
-    padding: 0;
   }
 
-  &__bg {
+  img {
+    height: 600px;
+  }
+
+  &__heading {
     position: absolute;
     top: 220px;
     display: flex;
@@ -13,10 +16,10 @@
     padding: 35px 40px;
     width: 600px;
     min-height: 220px;
-    background-color: var(--background-color);
+    background-color: var(--color-dark);
   }
 
-  &__text {
+  &__heading-text {
     font-family: var(--main-font);
     font-weight: 400;
     font-size: 40px;
