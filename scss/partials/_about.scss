@@ -10,27 +10,28 @@
 }
 
 .heading {
-  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+  padding-top: 20px;
+  padding-bottom: 4px;
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: var(--color-dark);
+  row-gap: 20px;
 
-  &__text {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: var(--main-font);
-    font-weight: 400;
-    font-style: normal;
-    font-size: 40px;
-    line-height: 40px;
-    letter-spacing: 2px;
-    text-align: center;
-    text-transform: capitalize;
-    color: var(--color-dark);
-  }
-
-  &__line {
-    margin: 0 auto;
+  &::after {
+    content: " ";
+    position: relative;
     width: 50px;
     height: 1px;
-    background-color: var(--color-black);
+    background-color: var(--color-dark);
   }
 }
 

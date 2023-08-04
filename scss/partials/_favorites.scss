@@ -57,6 +57,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 40px;
   row-gap: 40px;
 
   @media (width < 1220px) {
@@ -80,20 +81,27 @@
     max-width: 375px;
   }
 
-  &__heading {
-    margin-bottom: 19px;
-  }
-
   &__title {
     margin-bottom: 20px;
   }
 
-  &__heading-text {
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 19px;
     font-family: var(--primary-font);
     font-weight: 300;
     font-size: 20px;
     line-height: 40px;
     letter-spacing: 1.4px;
+
+    &::after {
+      content: " ";
+      position: relative;
+      width: 60px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
   }
 
   &__heading-line {
