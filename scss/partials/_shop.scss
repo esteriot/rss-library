@@ -1,4 +1,6 @@
 .shop {
+  margin-bottom: 40px;
+
   &__text {
     margin-bottom: 40px;
     font-family: var(--secondary-font);
@@ -13,7 +15,6 @@
   &__menu {
     display: grid;
     column-gap: 20px;
-    flex-wrap: wrap;
     justify-content: space-between;
     grid-template-columns: max-content 1fr;
 
