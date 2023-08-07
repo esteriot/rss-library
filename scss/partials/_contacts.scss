@@ -9,14 +9,15 @@
     display: grid;
     justify-items: end;
     grid-template-columns: max-content 1fr;
+    margin-bottom: 40px;
 
-    @media (width <= 1160px) {
+    @media (width <= 1180px) {
       row-gap: 100px;
     }
   }
 
   &__map {
-    @media (width <= 1160px) {
+    @media (width <= 1180px) {
       grid-column: 1 / 3;
     }
 

@@ -1,0 +1,126 @@
+.card {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @media (width <= 1110px) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
+  }
+
+  &__check {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__check-heading {
+    margin-bottom: 30px;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+  }
+
+  &__get {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 35px;
+
+    @media (width <= 1110px) {
+      align-items: center;
+      row-gap: 40px;
+    }
+  }
+
+  &__get-heading {
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+  }
+
+  &__get-text {
+    max-width: 456px;
+    font-family: var(--secondary-font);
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 0.4px;
+    text-align: right;
+
+    @media (width <= 1110px) {
+      max-width: 600px;
+      text-align: center;
+    }
+  }
+
+  &__get-buttons {
+    display: flex;
+    column-gap: 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-gold);
+  width: 600px;
+  height: 386px;
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+  background: var(--color-white);
+
+  &__heading {
+    margin-bottom: 20px;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-bottom: 20px;
+    padding: 20px 20px 0;
+    background-color: var(--color-gold);
+  }
+
+  &__input {
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 10px;
+    padding-left: 20px;
+    width: 520px;
+    height: 66px;
+    font-family: var(--main-font);
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    color: var(--color-grey);
+    background: var(--color-white);
+  }
+}
+
+.button--small {
+  padding: 8px;
+  width: 75px;
+  font-size: 10px;
+}
+
+.button--form {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 2px;
+  padding: 9px 39px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
