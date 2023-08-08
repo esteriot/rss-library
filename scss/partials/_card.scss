@@ -2,7 +2,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     @media (width <= 1110px) {
       flex-direction: column;
