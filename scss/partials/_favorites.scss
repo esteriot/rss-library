@@ -25,6 +25,7 @@
     font: inherit;
     color: var(--color-gold);
     background-color: #fff;
+    cursor: pointer;
 
     &::before {
       content: "";
@@ -46,6 +47,7 @@
     align-items: center;
     font-family: var(--secondary-font);
     font-size: 20px;
+    cursor: pointer;
   }
 
   &__form-label--active {
@@ -151,9 +153,16 @@
   font-weight: 700;
   font-size: 10px;
   letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-gold);
+  }
 }
 
 .button--owned {
   border-color: var(--color-gold);
   color: var(--color-gold);
+  pointer-events: none;
 }

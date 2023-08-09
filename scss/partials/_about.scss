@@ -40,8 +40,6 @@
   flex-direction: column;
   align-items: center;
 
-  // padding: 0 20px;
-
   &__image-container {
     display: grid;
     column-gap: 25px;
@@ -61,14 +59,22 @@
 
   &__pagination {
     display: flex;
-    column-gap: 10px;
     align-self: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 
     @media (width <= 768px) {
-      padding-top: 25px;
+      padding-top: 20px;
     }
+  }
+
+  &__pagination-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
   }
 
   &__pagination-icon {
@@ -91,6 +97,14 @@
     }
   }
 
+  &__pagination-item--hidden {
+    display: none;
+
+    @media (width <= 768px) {
+      display: flex;
+    }
+  }
+
   @media (width <= 768px) {
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -103,9 +117,9 @@
   width: 24px;
   height: 25px;
 
-  @media (width <= 768px) {
-    display: inline-block;
-  }
+  // @media (width <= 768px) {
+  //   display: inline-block;
+  // }
 }
 
 .line-break {
