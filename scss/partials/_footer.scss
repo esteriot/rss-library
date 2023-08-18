@@ -25,6 +25,10 @@
     flex-direction: column;
     text-align: right;
     row-gap: 10px;
+
+    @media (width <= 420px) {
+      text-align: center;
+    }
   }
 
   &__wrapper {
@@ -40,6 +44,12 @@
       height: 1px;
       background-color: var(--color-white);
     }
+
+    @media (width <= 420px) {
+      column-gap: 20px;
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   &__copy {
@@ -51,10 +61,24 @@
     font-size: 20px;
     line-height: 20px;
     letter-spacing: 2px;
+
+    @media (width <= 520px) {
+      font-size: 16px;
+    }
+  }
+
+  &__school {
+    @media (width <= 420px) {
+      display: none;
+    }
   }
 }
 
 .socials {
   display: flex;
   column-gap: 16px;
+
+  @media (width <= 420px) {
+    justify-content: center;
+  }
 }

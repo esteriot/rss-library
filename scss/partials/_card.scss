@@ -23,6 +23,10 @@
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 0.6px;
+
+    @media (width <= 420px) {
+      font-size: 20px;
+    }
   }
 
   &__get {
@@ -34,6 +38,10 @@
     @media (width <= 1110px) {
       align-items: center;
       row-gap: 40px;
+    }
+
+    @media (width <= 420px) {
+      row-gap: 20px;
     }
   }
 
@@ -56,6 +64,11 @@
       max-width: 600px;
       text-align: center;
     }
+
+    @media (width <= 420px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   &__get-buttons {
@@ -71,7 +84,6 @@
   justify-content: center;
   border: 3px solid var(--color-gold);
   width: 600px;
-  height: 386px;
   box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   background: var(--color-white);
 
@@ -82,14 +94,21 @@
     font-size: 30px;
     line-height: 50px;
     letter-spacing: 0.6px;
+
+    @media (width <= 420px) {
+      font-size: 20px;
+      text-align: center;
+    }
   }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    margin-top: 17px;
     margin-bottom: 20px;
     padding: 20px 20px 0;
+    min-width: 94.2%;
     background-color: var(--color-gold);
   }
 
@@ -98,7 +117,7 @@
     border: none;
     border-radius: 10px;
     padding-left: 20px;
-    width: 520px;
+    width: 100%;
     height: 66px;
     font-family: var(--main-font);
     font-size: 30px;
@@ -106,6 +125,15 @@
     letter-spacing: 0.6px;
     color: var(--color-grey);
     background: var(--color-white);
+
+    @media (width <= 420px) {
+      font-size: 20px;
+    }
+  }
+
+  @media (width < 640px) {
+    width: auto;
+    max-width: 600px;
   }
 }
 
@@ -117,10 +145,14 @@
 
 .button--form {
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 27px;
   border-radius: 2px;
   padding: 9px 39px;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 1px;
+
+  @media (width <= 420px) {
+    font-size: 16px;
+  }
 }

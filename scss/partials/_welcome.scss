@@ -18,6 +18,10 @@
     width: 600px;
     min-height: 220px;
     background-color: var(--color-dark);
+
+    @media (width < 600px) {
+      width: auto;
+    }
   }
 
   &__heading-text {
@@ -29,5 +33,9 @@
     text-align: center;
     text-transform: uppercase;
     color: var(--color-white);
+
+    @media (width < 450px) {
+      font-size: 30px;
+    }
   }
 }

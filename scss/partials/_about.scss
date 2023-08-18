@@ -26,6 +26,10 @@
   color: var(--color-dark);
   row-gap: 20px;
 
+  @media (width <= 420px) {
+    font-size: 28px;
+  }
+
   &::after {
     content: " ";
     position: relative;
