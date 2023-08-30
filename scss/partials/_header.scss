@@ -64,6 +64,10 @@
       background-color: var(--color-black);
       transition: right 0.3s;
     }
+
+    @media (width <= 930px) and (orientation: landscape) {
+      width: 420px;
+    }
   }
 
   &__list--active {
