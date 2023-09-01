@@ -1,7 +1,6 @@
 const menu = document.querySelector('.navigation__list');
 const burgerBtn = document.querySelector('.burger');
 const bg = document.querySelector('.bg');
-bg.classList.add('.bg');
 
 function handleShowBurger() {
   burgerBtn.classList.toggle('burger--active');
