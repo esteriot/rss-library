@@ -24,18 +24,13 @@
               <span></span>
             </div>
           </nav>
-          <button aria-label="profile" type="button" class="header__profile-icon"><svg width="28" height="28"
-              viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"
-                fill="white" />
-            </svg></button>
+          <button aria-label="profile" type="button" class="header__profile-icon"></button>
           <div class="modal-profile">
             <h4 class="modal-profile__heading">Profile</h4>
             <span class="modal-profile__login">Log In</span>
             <span class="modal-profile__register">Register</span>
-            <!-- <span>My profile</span>
-            <span>Log Out</span> -->
+            <span class="modal-profile__mypfofile">My profile</span>
+            <span class="modal-profile__logout">Log Out</span>
           </div>
         </div>
       </header>
@@ -539,7 +534,7 @@
     </div>
     <div class="modal">
       <div class="modal__container">
-        <form class="modal-form register-form" action="">
+        <form name="register" class="modal-form register-form" action="">
           <h3 class="modal-form__heading">Register</h3>
           <svg class="modal-form__close-register" xmlns="http://www.w3.org/2000/svg" width="19" height="19"
             viewBox="0 0 19 19" fill="none">
@@ -547,22 +542,32 @@
             <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3" />
           </svg>
           <p class="modal-form__field-name">First name</p>
-          <input class="modal-form__input" type="text" name="fisrtName" id="fisrtName" required pattern="[a-zA-Z0-9-]+">
+          <input class="modal-form__input" type="text" name="firstName" id="fisrtName" required
+            pattern="(?=^.{2,18}$)[a-zA-Z]+">
           <p class="modal-form__field-name">Last name</p>
-          <input class="modal-form__input" type="text" name="lastName" id="lastName" required pattern="[a-zA-Z0-9-]+">
+          <input class="modal-form__input" type="text" name="lastName" id="lastName" required
+            pattern="(?=^.{2,18}$)[a-zA-Z]+">
           <p class="modal-form__field-name">E-mail</p>
           <input class="modal-form__input" type="email" name="email" id="register-email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            pattern="^[a-zA-Z0-9_.+]+@[a-zA-Z0-9]+\.[a-zA-Z0-9.]+$" required>
           <p class="modal-form__field-name">Password</p>
-          <input class="modal-form__input" type="password" name="password" id="register-password" required
-            pattern="[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$">
+          <input class="modal-form__input" type="password" name="password" id="register-password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_])(?=.{6,12}$)^[a-zA-Z0-9!@#\$%\^&\*_]+"
+            required>
+          <ul class="register__password-reqs">
+            <li>Must be between 6 to 12 character</li>
+            <li>Must contain at least one character uppercase</li>
+            <li>Must contain at least one character lowsercase</li>
+            <li>Must contain at least one specaial character</li>
+            <li>Must contain at least a number</li>
+          </ul>
           <button class="button" type="submit">Sign Up</button>
           <div class="modal-form-wrapper">
             <span class="modal-form__question">Already have an account?&nbsp;</span>
             <a class="modal-form__login-link" href="#">Login</a>
           </div>
         </form>
-        <form class="modal-form login-form" action="">
+        <form name="login" class="modal-form login-form" action="">
           <h3 class="modal-form__heading">Login</h3>
           <svg class="modal-form__close-login" xmlns="http://www.w3.org/2000/svg" width="19" height="19"
             viewBox="0 0 19 19" fill="none">
@@ -571,10 +576,10 @@
           </svg>
           <p class="modal-form__field-name">E-mail or readers card</p>
           <input class="modal-form__input" type="email" name="email" id="login-email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            pattern="[a-zA-Z0-9]+@[a-z]+.[a-z]+" required>
           <p class="modal-form__field-name">Password</p>
           <input class="modal-form__input" type="password" name="password" id="login-password" required
-            pattern="[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$">
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*_])(?=.{6,12}$)">
           <button class="button" type="submit">Log In</button>
           <div class="modal-form-wrapper">
             <span class="modal-form__question">Don’t have an account?&nbsp;</span>

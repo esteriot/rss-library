@@ -24,17 +24,6 @@
   background-color: transparent;
 }
 
-// .modal__close {
-//   position: absolute;
-//   right: -40px;
-//   top: -52px;
-//   cursor: pointer;
-
-//   &:hover {
-//     transform: scale(1.05);
-//   }
-// }
-
 .modal-profile {
   position: absolute;
   right: 0;
@@ -45,7 +34,7 @@
   align-items: center;
   border-radius: 3px;
   padding: 5px;
-  width: 80px;
+  width: 85px;
   height: 115px;
   font-family: var(--secondary-font);
   font-size: 15px;
@@ -85,7 +74,6 @@
 }
 
 .modal-form {
-  // position: relative;
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -152,6 +140,12 @@
 
 .bounce-top {
   animation: bounce-top 0.9s both;
+}
+
+.register__password-reqs {
+  margin-top: 5px;
+  max-width: 200px;
+  font-size: 8px;
 }
 
 @keyframes bounce-top {
