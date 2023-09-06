@@ -9,6 +9,7 @@ const profile = document.querySelector('.modal-profile');
 const logOutBtn = document.querySelector('.modal-profile__logout');
 const regForm = document.forms.register;
 const loginForm = document.forms.login;
+const { cardCheckForm } = document.forms;
 
 let userFirstName;
 let userLastName;
@@ -81,20 +82,67 @@ regForm.addEventListener('submit', (e) => {
     localStorage.setItem('email', userEmail);
     localStorage.setItem('password', userPassword);
     localStorage.setItem('isLoggedIn', isLoggedIn);
+    localStorage.setItem('cardNumber', 12345);
     alert('Registration completed successfully');
     isLogged();
+  }
+  regForm.style.display = 'none';
+});
+
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  userEmail = loginForm.elements.email.value;
+  userPassword = loginForm.elements.password.value;
+  if (
+    userEmail === localStorage.getItem('email') &&
+    userPassword === localStorage.getItem('password')
+  ) {
+    isLoggedIn = true;
+    localStorage.setItem('isLoggedIn', isLoggedIn);
+    modal.classList.remove('modal__active');
+    document.body.classList.toggle('lock');
+    loginForm.style.display = 'none';
+    isLogged();
+    loginForm.reset();
+  } else {
+    alert('Incorrect login or password');
   }
 });
 
 logOutBtn.addEventListener('click', () => {
   isLoggedIn = false;
   localStorage.setItem('isLoggedIn', isLoggedIn);
-  localStorage.removeItem('firstName');
-  localStorage.removeItem('lastName');
-  localStorage.removeItem('email');
-  localStorage.removeItem('password');
   profile.classList.remove('modal-profile--active');
   isLogged();
+});
+
+// card check
+
+const checkCardBtn = document.querySelector('.button--form');
+const cardInfo = document.querySelector('.card-info');
+
+cardCheckForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const fullName = `${userFirstName} ${userLastName}`;
+  const cardNumber = localStorage.getItem('cardNumber');
+  const userName = cardCheckForm.elements.name;
+  const cardNum = cardCheckForm.elements.number;
+
+  if (fullName === userName.value && cardNumber === cardNum.value) {
+    checkCardBtn.style.display = 'none';
+    cardInfo.style.display = 'flex';
+    userName.style.color = '#bb945f';
+    cardNum.style.color = '#bb945f';
+    setTimeout(() => {
+      checkCardBtn.style.display = 'block';
+      cardInfo.style.display = 'none';
+      userName.style.color = '#8e8e8e';
+      cardNum.style.color = '#8e8e8e';
+      cardCheckForm.reset();
+    }, 5000);
+  } else {
+    alert('You card is not valid');
+  }
 });
 
 isLogged();
