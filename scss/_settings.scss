@@ -77,20 +77,30 @@ ul {
 
 .bg--active {
   position: absolute;
+  z-index: 1;
   display: flex;
   background-color: rgb(0 0 0 / 50%);
   inset: 0;
-  z-index: 1;
 }
 
 .transparent {
   position: absolute;
+  z-index: 3;
   display: flex;
   background-color: rgb(255 255 255 / 10%);
   inset: 0;
-  z-index: 3;
 }
 
 .lock {
   overflow: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

@@ -29,7 +29,17 @@
     }
   }
 
-  &__get {
+  &__profile {
+    display: none;
+  }
+
+  &__get-buttons {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__get,
+  &__profile {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -45,14 +55,16 @@
     }
   }
 
-  &__get-heading {
+  &__get-heading,
+  &__profile-heading {
     font-family: var(--main-font);
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 0.6px;
   }
 
-  &__get-text {
+  &__get-text,
+  &__profile-text {
     max-width: 456px;
     font-family: var(--secondary-font);
     font-size: 20px;
@@ -69,11 +81,6 @@
       font-size: 16px;
       line-height: 24px;
     }
-  }
-
-  &__get-buttons {
-    display: flex;
-    column-gap: 20px;
   }
 }
 
@@ -155,6 +162,10 @@
   @media (width <= 420px) {
     font-size: 16px;
   }
+}
+
+.button--profile {
+  align-self: end;
 }
 
 .card-info {
