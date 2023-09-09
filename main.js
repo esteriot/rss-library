@@ -17,6 +17,8 @@ const checkCardBtn = document.querySelector('.button--form');
 const cardInfo = document.querySelector('.card-info');
 const formUsername = document.querySelector('.form__username');
 const formCardNum = document.querySelector('.form__card-number');
+const profileAvatar = document.querySelector('.profile__user-avatar');
+const profileName = document.querySelector('.profile__user-name');
 
 let userFirstName;
 let userLastName;
@@ -38,6 +40,19 @@ function validatePassword(password) {
   testResult = regex.test(password);
   return testResult;
 }
+
+// function showPopup(text) {
+//   const popup = document.createElement('div');
+//   popup.classList.add('popup');
+//   const popupText = document.createElement('p');
+//   popupText.classList.add('popup__text');
+//   popupText.textContent = text;
+//   popup.append(popupText);
+//   document.body.appendChild(popup);
+//   setTimeout(() => {
+//     document.body.removeChild(popup);
+//   }, 3000);
+// }
 
 function showCardInfo() {
   checkCardBtn.style.display = 'none';
@@ -65,6 +80,19 @@ function hideCardInfo() {
   checkCardBtn.removeAttribute('disabled', 'disabled');
 }
 
+function showPopup(text) {
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
+  const popupText = document.createElement('p');
+  popupText.classList.add('popup__text');
+  popupText.textContent = text;
+  popup.append(popupText);
+  document.body.appendChild(popup);
+  setTimeout(() => {
+    document.body.removeChild(popup);
+  }, 3000);
+}
+
 function isLogged() {
   isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
   if (isLoggedIn) {
@@ -75,6 +103,8 @@ function isLogged() {
     profile.children[3].style.display = 'inline-block';
     profile.children[4].style.display = 'inline-block';
     profileBtn.textContent = userFirstName.at(0) + userLastName.at(0);
+    profileAvatar.textContent = userFirstName.at(0) + userLastName.at(0);
+    profileName.textContent = `${userFirstName} ${userLastName}`;
     profileBtn.classList.add('header__profile-icon--logged');
     cardGet.style.display = 'none';
     cardProfile.style.display = 'flex';
@@ -123,7 +153,7 @@ regForm.addEventListener('submit', (e) => {
     localStorage.setItem('password', userPassword);
     localStorage.setItem('isLoggedIn', isLoggedIn);
     localStorage.setItem('cardNumber', 12345);
-    alert('Registration completed successfully');
+    showPopup('Registration completed successfully');
     isLogged();
   }
   regForm.style.display = 'none';
@@ -145,7 +175,7 @@ loginForm.addEventListener('submit', (e) => {
     isLogged();
     loginForm.reset();
   } else {
-    alert('Incorrect login or password');
+    showPopup('Incorrect login or password');
   }
 });
 
@@ -169,7 +199,7 @@ cardCheckForm.addEventListener('submit', (e) => {
       hideCardInfo();
     }, 3000);
   } else {
-    alert('You card is not valid');
+    showPopup('You card is not valid');
     cardCheckForm.reset();
   }
 });

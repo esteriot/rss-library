@@ -193,3 +193,29 @@
     animation-timing-function: ease-out;
   }
 }
+
+.popup {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-white);
+  padding: 20px;
+  font-size: 20px;
+  color: var(--color-gold);
+  background-color: var(--color-black);
+  animation: slide-left 0.3s ease-in-out both;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
